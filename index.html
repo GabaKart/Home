@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GabaKart — Women's Fashion House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+<nav class="nav" id="nav">
+  <a class="word" href="index.html">GabaKart</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  <ul id="navLinks">
+    <li><a href="index.html" class="current">Home</a></li>
+    <li><a href="nightfloss.html">Nightfloss</a></li>
+    <li><a href="Ddyacreations.html">DDya Creations</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HERO : lively animated collage ================= -->
+<section class="hero" id="top">
+  <div class="hero-aurora"><span></span><span></span><span></span></div>
+
+  <div class="hero-ticker">
+    <div class="ticker-track">
+      <span>Nightfloss</span><span>DDya Creations</span><span>New drops weekly</span>
+      <span>Pan-India delivery</span><span>Nightfloss</span><span>DDya Creations</span>
+      <span>New drops weekly</span><span>Pan-India delivery</span>
+    </div>
+  </div>
+
+  <div class="hero-collage" id="heroCollage"></div>
+
+  <svg class="spin-badge" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <path id="badgePath" d="M80,80 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0" fill="none"/>
+    <text><textPath href="#badgePath" startOffset="0%">NEW DROPS EVERY WEEK • NEW DROPS EVERY WEEK • </textPath></text>
+  </svg>
+  <div class="spin-badge-center" aria-hidden="true">✦</div>
+
+  <div class="hero-overlay">
+    <div class="hero-card">
+      <div class="kicker">
+        <span class="pill">GabaKart</span><span class="cross">×</span><span class="pill">Gaba Junction </span>
+      </div>
+      <h1>House of Indian womenswear, one address</h1>
+      <p>Gaba Junction brings bold, breathable, festival-ready fashion together — new looks landing every week.</p>
+      <div class="hero-ctas">
+        <a class="hero-cta" href="nightfloss.html">Explore Nightfloss</a>
+        <a class="hero-cta solid" href="Ddyacreations.html">Explore DDya Creations</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ================= BRANDS ================= -->
+<section class="section" id="brands">
+  <div class="container">
+    <div class="section-head">
+      <h2>Women's wear houses, one address</h2>
+      <p>Every label under GabaKart keeps its own hand — we bring the reach, they bring the point of view. Tap through to see each brand's full collection.</p>
+    </div>
+
+    <div class="brand-grid">
+      <div class="brand-card">
+        <div class="brand-mark">NF</div>
+        <h3>Nightfloss</h3>
+        <p class="desc">Fluid, after-dark silhouettes for women who dress for the room they're about to walk into — modern, minimal, quietly confident.</p>
+        <a class="btn" href="nightfloss.html">View collection</a>
+      </div>
+      <div class="brand-card">
+        <div class="brand-mark">DC</div>
+        <h3>DDya Creations</h3>
+        <p class="desc">Festive and bridal wear rooted in handwork and colour — DDya Creations dresses celebrations with detail that rewards a second look.</p>
+        <a class="btn" href="Ddyacreations.html">View collection</a>
+      </div>
+      <!-- To add a third brand: copy one .brand-card block above, give it
+           its own page (copy nightfloss.html as a starting point), and
+           add a matching link in the nav on every page. -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>We deliver, pan-India</h2>
+      <p>GabaKart ships to every state in the country — wherever you are, Nightfloss and DDya Creations can reach you.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="map-wrap">
+        <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+          <path class="india-shape" d="M155,35 175,20 210,25 235,40 255,35 270,45 285,55 295,50 305,65 300,85 320,80 335,90 340,110 325,120 335,135 325,150 335,160 320,172 310,185 295,178 280,190 270,175 260,165 275,200 285,225 270,245 255,260 265,285 255,310 245,340 230,375 210,415 195,450 175,480 160,495 145,470 130,440 115,410 100,375 90,345 80,320 70,295 60,270 48,255 35,240 45,225 30,210 50,195 65,205 55,180 70,165 85,145 75,120 90,100 105,80 120,60 135,45 Z"/>
+          <!-- Pins are generated from the servedStates list in the script below.
+               GabaKart currently marks every state as served — remove a name
+               from servedStates if a state should show as not yet covered. -->
+          <g id="pinLayer"></g>
+        </svg>
+      </div>
+
+      <div class="contact-info">
+        <div>
+          <div class="label">States we cover</div>
+          <div class="states-served" id="stateChips"></div>
+        </div>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value">+91 98765 43210</div>
+        </div>
+        <div>
+          <div class="label">Email</div>
+          <div class="value">hello@gabakart.com</div>
+        </div>
+        <div>
+          <div class="label">Studio address</div>
+          <div class="value small">GabaKart House, Industrial Area Phase II, Chandigarh, 160002, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 GabaKart. Nightfloss and DDya Creations are brands of GabaKart. &middot; <a href="nightfloss.html">Nightfloss</a> &middot; <a href="Ddyacreations.html">DDya Creations</a></footer>
+
+<script>
+  // ---------- nav scroll state ----------
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---------- hero floating collage ----------
+  // Add or edit entries here to change the scattered cards in the hero —
+  // no other markup needs to change.
+  const heroFloaters = [
+    {tag:'Placeholder — Look 01', cap:'Nightfloss, evening edit', top:'10%', left:'4%', w:'190px', h:'230px', rot:-7, dur:'6.2s', delay:'0s', bg:'linear-gradient(160deg,#FF6F91,#C22A56)', mobile:true},
+    {tag:'Placeholder — Look 02', cap:'DDya, festive drape', top:'58%', left:'2%', w:'170px', h:'210px', rot:5, dur:'7s', delay:'.4s', bg:'linear-gradient(160deg,#FFD23F,#E8A700)', mobile:false},
+    {tag:'Placeholder — Look 03', cap:'Nightfloss, daywear', top:'8%', right:'4%', w:'180px', h:'220px', rot:6, dur:'6.6s', delay:'.2s', bg:'linear-gradient(160deg,#8CC5B8,#3E7D6C)', mobile:false},
+    {tag:'Placeholder — Look 04', cap:'DDya, bridal', top:'60%', right:'3%', w:'200px', h:'240px', rot:-5, dur:'7.4s', delay:'.6s', bg:'linear-gradient(160deg,#B0729A,#6B2A57)', mobile:true},
+  ];
+  const silhouette = `<svg class="f-silhouette" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" fill="rgba(255,255,255,0.9)">
+      <path d="M50 6c6 0 11 5 11 11 0 4-2 7-5 9l10 8-4 16-9-6v78H47V44l-9 6-4-16 10-8c-3-2-5-5-5-9C39 11 44 6 50 6z"/>
+    </svg>`;
+
+  const collage = document.getElementById('heroCollage');
+  collage.innerHTML = heroFloaters.map(f => {
+    const pos = [
+      `top:${f.top}`,
+      f.left ? `left:${f.left}` : `right:${f.right}`,
+    ].join(';');
+    const style = `${pos};width:${f.w};height:${f.h};background:${f.bg};--rot:${f.rot}deg;--dur:${f.dur};--delay:${f.delay};`;
+    return `
+      <div class="floater${f.mobile ? '' : ' hide-mobile'}" style="${style}">
+        ${silhouette}
+        <div class="f-tag">${f.tag}</div>
+        <div class="f-cap">${f.cap}</div>
+      </div>
+    `;
+  }).join('');
+
+  // ---------- coverage map ----------
+  // Approximate positions (in the 400x520 viewBox) for every state, placed
+  // on our stylised outline. GabaKart currently serves all of them — to
+  // mark a state as "coming soon" instead, just remove its name from
+  // servedStates below (its coordinates can stay here for later).
+  const stateCoords = {
+    "Jammu & Kashmir":  {x: 155, y: 42},
+    "Himachal Pradesh": {x: 178, y: 66},
+    "Punjab":           {x: 140, y: 92},
+    "Uttarakhand":      {x: 198, y: 92},
+    "Haryana":          {x: 158, y: 118},
+    "Delhi":            {x: 172, y: 126},
+    "Rajasthan":        {x: 100, y: 165},
+    "Uttar Pradesh":    {x: 210, y: 150},
+    "Bihar":            {x: 250, y: 165},
+    "Sikkim":           {x: 275, y: 118},
+    "Assam":            {x: 305, y: 148},
+    "Arunachal Pradesh":{x: 312, y: 95},
+    "Nagaland":         {x: 322, y: 140},
+    "Manipur":          {x: 316, y: 160},
+    "Meghalaya":        {x: 288, y: 150},
+    "Mizoram":          {x: 300, y: 175},
+    "Tripura":          {x: 282, y: 178},
+    "West Bengal":      {x: 270, y: 200},
+    "Jharkhand":        {x: 242, y: 208},
+    "Gujarat":          {x: 68, y: 235},
+    "Madhya Pradesh":   {x: 172, y: 220},
+    "Chhattisgarh":     {x: 222, y: 240},
+    "Odisha":           {x: 253, y: 262},
+    "Maharashtra":      {x: 128, y: 292},
+    "Telangana":        {x: 188, y: 300},
+    "Andhra Pradesh":   {x: 208, y: 335},
+    "Goa":              {x: 92, y: 322},
+    "Karnataka":        {x: 138, y: 348},
+    "Tamil Nadu":       {x: 172, y: 415},
+    "Kerala":           {x: 132, y: 405}
+  };
+
+  // GabaKart currently serves every state — this simply lists every key
+  // from stateCoords above. Remove a name to show it as not yet covered.
+  const servedStates = Object.keys(stateCoords);
+
+  const pinLayer = document.getElementById('pinLayer');
+  const chipRow = document.getElementById('stateChips');
+
+  servedStates.forEach((name, i) => {
+    const pos = stateCoords[name];
+    if(!pos) return;
+
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class','pin');
+    g.setAttribute('transform', `translate(${pos.x}, ${pos.y})`);
+    g.innerHTML = `<title>${name}</title><circle class="dot" cx="0" cy="0" style="--i:${i}"></circle>`;
+    pinLayer.appendChild(g);
+
+    const chip = document.createElement('span');
+    chip.className = 'state-chip';
+    chip.textContent = name;
+    chipRow.appendChild(chip);
+  });
+</script>
+
+</body>
+</html>
