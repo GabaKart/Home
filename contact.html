@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — JG Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,440&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html#top">JG <span class="wordmark-dot">Agency</span></a>
+  <nav class="site-nav">
+    <a href="index.html#b1">B1</a>
+    <a href="index.html#b2">B2</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="contact-wrap">
+  <a class="back-link" href="index.html">← Back to JG Agency</a>
+
+  <div class="contact-grid">
+
+    <!-- LEFT: contact info -->
+    <div>
+      <h1 class="contact-intro-title">Let's talk.</h1>
+      <p class="contact-intro-sub">Whether it's about B1, B2, or JG Agency as a whole — drop us a line and we'll get back to you.</p>
+
+      <div class="contact-block">
+        <p class="contact-block-label">Email</p>
+        <p class="contact-block-value"><a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-block-label">Phone / WhatsApp</p>
+        <p class="contact-block-value"><a href="tel:+910000000000">+91 00000 00000</a></p>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-block-label">Follow the brands</p>
+        <div class="contact-brands">
+          <a class="contact-brand-pill contact-brand-pill--b1" href="https://instagram.com/" target="_blank" rel="noopener">B1 ↗</a>
+          <a class="contact-brand-pill contact-brand-pill--b2" href="https://instagram.com/" target="_blank" rel="noopener">B2 ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <!--
+      NOTE: this is a static site with no backend, so the form below uses
+      a "mailto:" action — submitting it opens the visitor's own email app
+      with the message pre-filled, addressed to the email set here.
+      If you'd rather have messages land straight in an inbox or spreadsheet
+      without opening the visitor's mail app, swap the form's "action" for
+      a free form-handling service like Formspree (formspree.io) — just
+      replace the action URL, the fields below don't need to change.
+    -->
+    <form class="contact-form" action="mailto:hello@example.com" method="POST" enctype="text/plain">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+      </div>
+      <div class="form-row">
+        <label for="brand">Regarding</label>
+        <select id="brand" name="Regarding">
+          <option>General / JG Agency</option>
+          <option>B1</option>
+          <option>B2</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send message</button>
+      <p class="form-note">This opens your email app with the message pre-filled — nothing is sent automatically.</p>
+    </form>
+
+  </div>
+</main>
+
+</body>
+</html>

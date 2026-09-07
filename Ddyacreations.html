@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ddya Creations — Gaba Junction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav solid" id="nav">
+  <a class="word" href="index.html">Gaba Junction</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="nightfloss.html" class="current">Nightfloss</a></li>
+    <li><a href="Ddyacreations.html">DDya Creations</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ================= BRAND BANNER ================= -->
+<section class="brand-hero nightfloss">
+  <div class="glow"></div>
+  <div class="container">
+    <div class="badge"> Gaba Junction</div>
+    <h1>Ddya Creations</h1>
+    <p>Fluid, after-dark silhouettes for women who dress for the room they're about to walk into — modern, minimal, quietly confident. Slips, wraps, tailoring and gowns built to move.</p>
+    <a class="back-link" href="index.html">&larr; Back to GabaKart</a>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="section products-section nightfloss">
+  <div class="container">
+    <div class="section-head">
+      <h2>The DDya Creations collection</h2>
+      <p>A running view of what's in the line — for reference, not for sale here.</p>
+    </div>
+
+    <!-- Swipe on touch, drag the scrollbar, or use the arrows above to move
+         sideways through the collection. To add a product: copy a
+         .product-card block, set data-filter to one of the tabs above (or
+         add a new tab), and swap in the real photo and name. -->
+    <div class="product-scroller" id="nfScroller">
+      <!-- Product 1 -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="DyaCreations/1.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Blue velvet Kurta Set</div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="DyaCreations/2.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Maroon hosiery winter wear with hoodie</div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="DyaCreations/3.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Orange hosiery winter wear with hoodie</div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
+           
+    </div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 GabaKart. GabaKart is the agent for brands Nightfloss and DDya Creations. &middot; <a href="index.html">Home</a> &middot; <a href="Ddyacreations.html">DDya Creations</a></footer>
+
+<script>
+  // ---------- nav scroll state ----------
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---------- product filtering ----------
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const productCards = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.toggle('active', b === btn));
+      const type = btn.dataset.filter;
+      productCards.forEach(card => {
+        const match = type === 'all' || card.dataset.filter === type;
+        card.classList.toggle('hidden', !match);
+      });
+    });
+  });
+
+  // ---------- horizontal scroller arrows ----------
+  document.querySelectorAll('.scroll-arrows').forEach(group => {
+    const track = document.getElementById(group.dataset.target);
+    if(!track) return;
+    const step = () => (track.querySelector('.product-card')?.offsetWidth || 258) + 22;
+    group.querySelector('.scroll-prev').addEventListener('click', () => {
+      track.scrollBy({left: -step(), behavior:'smooth'});
+    });
+    group.querySelector('.scroll-next').addEventListener('click', () => {
+      track.scrollBy({left: step(), behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
