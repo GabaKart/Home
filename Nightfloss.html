@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nightfloss — Gaba Junction</title>
+<link rel="icon" type="image/png" href="assets/Favcon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -11,11 +12,11 @@
 <body>
 
 <nav class="nav solid" id="nav">
-  <a class="word" href="index.html">Gaba Junction</a>
+   <a class="word" href="index.html"><span class="gold-letter">G</span>aba<span class="gold-letter">   J</span>unction</a>  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
   <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
   <ul id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="Nightfloss.html" class="current">Nightfloss</a></li>
+    <li><a href="nightfloss.html" class="current">Nightfloss</a></li>
     <li><a href="Ddyacreations.html">DDya Creations</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
@@ -27,7 +28,7 @@
   <div class="container">
     <div class="badge"> Gaba Junction</div>
     <h1>Nightfloss</h1>
-    <p>Fluid, after-dark silhouettes for women who dress for the room they're about to walk into — modern, minimal, quietly confident. Slips, wraps, tailoring and gowns built to move.</p>
+    <p>Fluid, after-dark silhouettes for women who dress for the room they're about to walk into — modern, minimal, quietly confident.</p>
     <a class="back-link" href="index.html">&larr; Back to GabaKart</a>
   </div>
 </section>
@@ -36,14 +37,13 @@
 <section class="section products-section nightfloss">
   <div class="container">
     <div class="section-head">
-      <h2>The Nightfloss collection</h2>
-      <p>A running view of what's in the line — for reference, not for sale here.</p>
-    </div>
+  <p class="section-desc">
+    Indulge in timeless elegance and effortless comfort with luxury nightwear crafted for every woman.
+  </p>
+   <img src="Nightfoss/logo.png" alt="Nightfloss Logo" class="section-logo" />
+</div>
 
-    <!-- Swipe on touch, drag the scrollbar, or use the arrows above to move
-         sideways through the collection. To add a product: copy a
-         .product-card block, set data-filter to one of the tabs above (or
-         add a new tab), and swap in the real photo and name. -->
+
     <div class="product-scroller" id="nfScroller">
       <!-- Product 1 -->
       <div class="product-card" data-filter="evening">
@@ -75,13 +75,58 @@
         <div class="product-name">Orange hosiery winter wear with hoodie</div>
         <div class="product-brand">MRP: 9999/-</div>
       </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="Nightfoss/4.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Black Hosiery co-ords set with patches </div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
            
+      <!-- Product  -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="Nightfoss/5.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Blue front open co-ords set </div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="Nightfoss/6.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Geometrical Print same to same co-ords set </div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card" data-filter="evening">
+        <div class="product-photo">
+          <div class="product-photo">
+          <img src="Nightfoss/7.jpeg" alt="1">
+        </div>
+        </div>
+        <div class="product-name">Green hoodie winter co-ords set </div>
+        <div class="product-brand">MRP: 9999/-</div>
+      </div>
+
+
     </div>
     </div>
   </div>
 </section>
 
-<footer>&copy; 2026 GabaKart. GabaKart is the agent for brands Nightfloss and DDya Creations. &middot; <a href="index.html">Home</a> &middot; <a href="Ddyacreations.html">DDya Creations</a></footer>
+<footer>&copy; 2026 GabaKart. Nightfloss and DDya Creations are brands traded by GabaKart. &middot; <a href="nightfloss.html">Nightfloss</a> &middot; <a href="Ddyacreations.html">DDya Creations</a></footer>
 
 <script>
   // ---------- nav scroll state ----------

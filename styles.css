@@ -21,6 +21,8 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+
+
 html{scroll-behavior:smooth;}
 
 body{
@@ -31,11 +33,20 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-h1,h2,h3,.display{
+h1,h2,.display{
   font-family:'Fraunces',serif;
   font-weight:500;
   letter-spacing:-0.01em;
   line-height:1.05;
+}
+
+
+
+h3,.display{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  line-height:0.01;
 }
 
 a{color:inherit;text-decoration:none;}
@@ -102,7 +113,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   .nav-toggle{display:block;z-index:110;}
 }
 
+.gold-letter {
+  background: linear-gradient(135deg, #FFD700 0%, #E8A700 50%, #C59200 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: inherit;
+}
+
+
 /* ---------- HERO : lively animated collage (index.html landing) ---------- */
+/* main landing BG */
 .hero{
   position:relative;
   height:100vh;
@@ -119,6 +140,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 @keyframes driftA{0%,100%{transform:translate(0,0);}50%{transform:translate(4vw,3vw);}}
 @keyframes driftB{0%,100%{transform:translate(0,0);}50%{transform:translate(-4vw,-4vw);}}
 
+/* Pink flowing banner */
 .hero-ticker{
   position:absolute;top:100px;left:-4%;right:-4%;z-index:4;
   transform:rotate(-2deg);
@@ -138,6 +160,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 @keyframes tickerMove{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 .hero-collage{position:absolute;inset:0;z-index:2;}
+/* Landing page image floaters */
 .floater{
   position:absolute;border-radius:20px;overflow:hidden;
   box-shadow:0 20px 44px rgba(0,0,0,0.4);
@@ -151,6 +174,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   0%,100%{transform:rotate(var(--rot,0deg)) translateY(0);}
   50%{transform:rotate(var(--rot,0deg)) translateY(-16px);}
 }
+
+/* Floater text */
 .floater .f-silhouette{position:absolute;right:-8px;bottom:-8px;width:60%;opacity:.22;}
 .floater .f-tag{position:relative;font-size:0.66rem;letter-spacing:.03em;color:rgba(241,234,224,0.85);}
 .floater .f-cap{position:relative;font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--ivory);margin-top:2px;}
@@ -158,6 +183,37 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 @media(max-width:760px){
   .floater.hide-mobile{display:none;}
   .hero-ticker{top:74px;}
+}
+
+/* Floater background image */
+.floater .f-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Make sure text and silhouette appear above the background image */
+.floater .f-silhouette,
+.floater .f-tag,
+.floater .f-cap {
+  z-index: 1;
+}
+
+/* Optional: Add a subtle dark gradient overlay at the bottom so white text is readable over bright images */
+.floater::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .spin-badge{
@@ -198,20 +254,27 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   font-size:0.76rem;font-weight:600;padding:6px 14px;border-radius:20px;
   color:var(--ink);
 }
-.hero-card .kicker span.pill:nth-child(1){background:var(--yellow);}
+
+/* this is that gabakart x gaba junction */
+.hero-card .kicker span.pill:nth-child(1){background:var(--yellow);}  
 .hero-card .kicker span.pill:nth-child(3){background:var(--pink);}
 .hero-card .kicker .cross{color:rgba(241,234,224,0.6);font-size:0.9rem;}
 
+/* house of indian women... text */
 .hero-card h1{
   font-size:clamp(2.3rem,5.6vw,4rem);
   color:var(--ivory);
   font-weight:600;
   font-style:normal;
 }
+
+/* text below it */
 .hero-card p{
   margin-top:18px;max-width:480px;margin-left:auto;margin-right:auto;
   font-size:1.02rem;color:rgba(241,234,224,0.82);
 }
+
+/* main box */
 @keyframes heroIn{
   from{opacity:0;transform:translateY(16px) rotate(-0.6deg);}
   to{opacity:1;transform:translateY(0) rotate(-0.6deg);}
@@ -236,6 +299,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 .hero-scroll-cue .line{width:1px;height:34px;background:var(--yellow);
   animation:pulseLine 2s ease-in-out infinite;}
 @keyframes pulseLine{0%,100%{opacity:.35;}50%{opacity:1;}}
+
 
 /* ---------- BRAND PAGE BANNER (nightfloss.html / Ddyacreations.html) ---------- */
 .brand-hero{
@@ -273,7 +337,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 .brand-hero .back-link:hover{color:var(--ivory);border-color:var(--ivory);}
 
 /* ---------- SECTION HEADERS ---------- */
-.section{padding:120px 0;}
+/* .section{padding:120px 0;}
 .section-head{
   display:flex;justify-content:space-between;align-items:flex-end;
   gap:40px;margin-bottom:64px;flex-wrap:wrap;
@@ -282,8 +346,42 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   font-size:clamp(2rem,4vw,3rem);
   max-width:520px;
 }
-.section-head p{max-width:340px;color:#5A4E52;font-size:0.98rem;}
+.section-head p{max-width:340px;color:#5A4E52;font-size:0.98rem;} */
+/* Stack all elements inside .section-head vertically */
+.section-head {
+  display: flex;
+  justify-content: space-between; /* Pushes <p> to left edge, <img> to right edge */
+  align-items: center;            /* Vertically centers them together */
+  gap: 20px;                      /* Space between text and logo on smaller screens */
+  width: 100%;
+  margin-bottom: 30px;
+}
 
+/* Left-aligned paragraph styling */
+.section-head .section-desc {
+  text-align: left;
+  max-width: 600px;               /* Keeps the text from stretching too wide */
+  margin: 0;
+  color: rgba(49, 40, 26, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* Right-aligned logo styling */
+.section-head .section-logo {
+  width: 120px;                    /* Adjust logo size as needed */
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;                 /* Prevents logo from shrinking when window resizes */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .section-head {
+    flex-direction: column-reverse; /* Stacks text on top, logo above or below on small phones */
+    align-items: flex-start;
+  }
+}
 /* ---------- BRANDS (index.html) ---------- */
 #brands{background:var(--ivory);}
 .brand-grid{
@@ -293,9 +391,25 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 }
 @media(max-width:760px){.brand-grid{grid-template-columns:1fr;}}
 
+/* Container for aligning logo and title */
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Logo styling */
+.brand-logo {
+  width: 200px;          /* Adjust width as needed */
+  height: 200px;         /* Adjust height as needed */
+  object-fit: contain;  /* Prevents logo distortion */
+  display: block;
+}
+
 .brand-card{
   background:var(--ivory);
-  padding:56px 48px;
+  padding:25px 25px;
   display:flex;flex-direction:column;gap:22px;
 }
 .brand-mark{
@@ -324,7 +438,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
    adding another nth-child rule above for its mark color */
 
 /* ---------- PRODUCTS : horizontal scroller (brand pages) ---------- */
-.products-section.nightfloss{background:var(--ivory-dim);}
+/* .products-section.nightfloss{background:var(--ivory-dim);}
 .products-section.ddya{background:var(--ivory-dim);}
 .products-bar{
   display:flex;justify-content:space-between;align-items:center;
@@ -380,57 +494,187 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 }
 
 .scroller-block + .scroller-block{margin-top:72px;}
-.scroller-label{font-size:0.94rem;color:#5A4E52;margin-bottom:18px;}
+.scroller-label{font-size:0.94rem;color:#5A4E52;margin-bottom:18px;} */
+/* Change container from horizontal flex to a 3-column Grid */
+.product-scroller {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 items per row */
+  gap: 32px 24px;                          /* Row gap: 32px, Column gap: 24px */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;                    /* Disables horizontal scroll */
+}
 
+/* Allow cards to expand naturally to fill grid columns */
+.product-card {
+  width: 100%;                             /* Fills equal grid column space */
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.product-card.hidden {
+  display: none;
+}
+
+/* Product photo & image rules */
+.product-photo {
+  aspect-ratio: 3/4;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg,#DCD2C0,#EFE8DB);
+  border: 1px solid rgba(0, 0, 0, 0.08);   /* Clean solid line instead of dashed */
+  margin-bottom: 14px;
+}
+
+/* Ensures uploaded product photos fill the container cleanly */
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive adjustments for Mobile & Tablets */
+@media (max-width: 900px) {
+  .product-scroller {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+  }
+}
+
+@media (max-width: 560px) {
+  .product-scroller {
+    grid-template-columns: 1fr;            /* 1 item per row on mobile phones */
+    gap: 24px;
+  }
+}
 /* ---------- CONTACT (index.html) ---------- */
-#contact{background:var(--ink);color:var(--ivory);}
+/* #contact{background:var(--ink);color:var(--ivory);}
 #contact .section-head p{color:rgba(241,234,224,0.6);}
 #contact .section-head h2{color:var(--ivory);}
-
-.contact-grid{
-  display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center;
-}
-@media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
-
-.map-wrap{position:relative;}
-.map-wrap svg{width:100%;height:auto;max-height:560px;}
-.india-shape{
-  fill:rgba(176,141,87,0.16);
-  stroke:var(--gold);
-  stroke-width:1.6;
-  stroke-linejoin:round;
-  animation:mapPulse 5s ease-in-out infinite;
-}
-@keyframes mapPulse{0%,100%{fill-opacity:1;}50%{fill-opacity:.55;}}
-.map-caption{
-  fill:rgba(241,234,224,0.35);
-  font-family:'Fraunces',serif;font-style:italic;font-size:15px;
-  letter-spacing:.02em;
-}
-.pin{cursor:default;}
-.pin circle.dot{
-  fill:var(--gold);r:0;opacity:0;
-  animation:pinPop .45s ease-out forwards;
-  animation-delay:calc(var(--i,0) * 0.03s);
-}
-@keyframes pinPop{
-  0%{r:0;opacity:0;}
-  70%{r:5;opacity:1;}
-  100%{r:3.4;opacity:1;}
-}
 
 .contact-info{display:flex;flex-direction:column;gap:34px;}
 .contact-info .label{font-size:0.78rem;color:var(--gold);margin-bottom:6px;}
 .contact-info .value{font-size:1.15rem;font-family:'Fraunces',serif;}
-.contact-info .value.small{font-size:1rem;font-family:'Manrope',sans-serif;max-width:320px;}
-
-.states-served{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
-.state-chip{
-  border:1px solid rgba(241,234,224,0.35);
-  padding:7px 16px;border-radius:20px;font-size:0.82rem;
+.contact-info .value.small{font-size:1rem;font-family:'Manrope',sans-serif;max-width:320px;} */
+#contact {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 80px 0;
 }
-.state-chip.add{
-  border-style:dashed;color:rgba(241,234,224,0.5);
+
+#contact .section-head {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+}
+
+#contact .section-head .subtitle {
+  font-size: 1.9rem;
+  letter-spacing: 0.8em;
+  text-indent: 0.8em; /* Balances out the trailing space on the last letter */
+  text-transform: uppercase;
+  color: var(--gold, #D4AF37);
+  margin-bottom: 0px;
+  text-align: center; /* Ensures text alignment remains centered */
+}
+
+#contact .section-head p {
+  color: rgba(241, 234, 224, 0.7);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px; /* Adjust width as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3-Card Responsive Grid */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Base Card Styling */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-card:not(.static):hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--gold, #D4AF37);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold, #D4AF37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card .label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold, #D4AF37);
+  margin-bottom: 8px;
+}
+
+.contact-card .value {
+  font-size: 1.15rem;
+  font-family: 'Fraunces', serif;
+  color: var(--ivory);
+  word-break: break-word;
+}
+
+.contact-card .value.small {
+  font-size: 0.95rem;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  color: rgba(241, 234, 224, 0.85);
+}
+
+.action-hint {
+  font-size: 0.8rem;
+  color: rgba(241, 234, 224, 0.5);
+  margin-top: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover .action-hint {
+  color: var(--gold, #D4AF37);
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 900px) {
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }
 
 footer{
